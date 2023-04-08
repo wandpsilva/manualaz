@@ -8,7 +8,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: build docker
+      - name: Build docker
         run: docker build -t manualaz:latest .
-      - name: list docker images
-        run: docker ps -a       
+      - name: List images
+        run: docker images
+      - name: Run
+        run: docker run manualaz:latest
+      - name: List containers
+        run: docker ps -a
