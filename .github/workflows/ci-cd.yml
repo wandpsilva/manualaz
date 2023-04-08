@@ -13,6 +13,6 @@ jobs:
       - name: List images
         run: docker images
       - name: Run
-        run: docker run manualaz
+        run: docker run -d -p 8080:80 manualaz
       - name: List containers
         run: docker ps -a
