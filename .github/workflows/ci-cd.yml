@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Build docker
+      - name: Build image
         run: docker build -t manualaz:latest .
       - name: List images
         run: docker images
@@ -16,3 +16,5 @@ jobs:
         run: docker run -d -p 8080:80 manualaz
       - name: List containers
         run: docker ps -a
+      - name: Call
+        run: curl http://localhost:8080/index.html
